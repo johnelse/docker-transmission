@@ -8,6 +8,7 @@ import argparse
 import subprocess
 import sys
 
+
 def main():
     """
     Main entry point.
@@ -33,6 +34,7 @@ def main():
         ]
     print "Launching docker with args %s" % docker_args
     subprocess.call(docker_args)
+
 
 if __name__ == "__main__":
     main()
