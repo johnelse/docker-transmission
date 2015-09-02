@@ -14,11 +14,11 @@ def main():
     Main entry point.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-p', '--password',
+    parser.add_argument('--password',
                         help='Admin password')
-    parser.add_argument('-d', '--downloads',
+    parser.add_argument('--downloads',
                         help='Directory for storing downloads')
-    parser.add_argument('-i', '--incomplete',
+    parser.add_argument('--incomplete',
                         help='Directory for storing incomplete files')
 
     args = parser.parse_args(sys.argv[1:])
