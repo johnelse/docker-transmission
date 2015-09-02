@@ -7,7 +7,9 @@ set -eux
 mkdir -p /tmp/transmission-downloads
 mkdir -p /tmp/transmission-incomplete
 
-./run.py -p abc123 -d /tmp/transmission-downloads -i /tmp/transmission-incomplete
+./run.py --password abc123 \
+    --downloads /tmp/transmission-downloads \
+    --incomplete /tmp/transmission-incomplete
 
 # sleep 10
 
