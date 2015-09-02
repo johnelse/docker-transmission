@@ -26,7 +26,7 @@ def main():
         "docker", "run", "-d", "--name", "transmission-container",
         "-p", "12345:12345",
         "-p", "12345:12345/udp",
-        "-p", "127.0.0.1:9091:9091",
+        "-p", "9091:9091",
         "-e", "ADMIN_PASS=%s" % args.password,
         "-v", "%s:/var/lib/transmission-daemon/downloads" % args.downloads,
         "-v", "%s:/var/lib/transmission-daemon/incomplete" % args.incomplete,
