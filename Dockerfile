@@ -7,8 +7,8 @@ RUN     apt-get -y install \
             transmission-common \
             transmission-daemon
 
-ADD     files/transmission-daemon /etc/transmission-daemon
-ADD     files/run_transmission.sh /usr/local/bin/run_transmission.sh
+COPY    files/transmission-daemon /etc/transmission-daemon
+COPY    files/run_transmission.sh /usr/local/bin/run_transmission.sh
 
 RUN     mkdir -p /var/lib/transmission-daemon/incomplete && \
         mkdir -p /var/lib/transmission-daemon/downloads && \
