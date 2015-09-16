@@ -2,7 +2,7 @@
 
 set -eux
 
-./build.sh
+make
 
 mkdir -p /tmp/transmission-downloads
 mkdir -p /tmp/transmission-incomplete
