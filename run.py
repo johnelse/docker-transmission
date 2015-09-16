@@ -5,6 +5,7 @@ Helper script for launching transmission in a docker container.
 """
 
 import argparse
+import os
 import subprocess
 import sys
 
@@ -22,6 +23,7 @@ def main():
                         help='Directory for storing incomplete files')
 
     args = parser.parse_args(sys.argv[1:])
+    image = "%s/transmission" % os.getenv("USER")
     docker_args = [
         "docker", "run", "-d", "--name", "transmission-container",
         "-p", "12345:12345",
@@ -30,7 +32,7 @@ def main():
         "-e", "ADMIN_PASS=%s" % args.password,
         "-v", "%s:/var/lib/transmission-daemon/downloads" % args.downloads,
         "-v", "%s:/var/lib/transmission-daemon/incomplete" % args.incomplete,
-        "transmission"
+        image
         ]
     print "Launching docker with args %s" % docker_args
     subprocess.call(docker_args)

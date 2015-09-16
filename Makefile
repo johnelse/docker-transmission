@@ -1,4 +1,4 @@
 all: build
 
 build:
-	@docker build -t transmission .
+	@docker build -t ${USER}/transmission .
