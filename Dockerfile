@@ -15,6 +15,8 @@ RUN     mkdir -p /var/lib/transmission-daemon/incomplete && \
         chown -R debian-transmission: /var/lib/transmission-daemon && \
         chown -R debian-transmission: /etc/transmission-daemon
 
+VOLUME  ["/etc/transmission-daemon/resume"]
+VOLUME  ["/etc/transmission-daemon/torrents"]
 VOLUME  ["/var/lib/transmission-daemon/downloads"]
 VOLUME  ["/var/lib/transmission-daemon/incomplete"]
 

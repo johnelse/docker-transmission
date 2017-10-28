@@ -17,6 +17,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--password',
                         help='Admin password')
+    parser.add_argument('--resume',
+                        help='Directory for storing resume files')
+    parser.add_argument('--torrents',
+                        help='Directory for storing torrent files')
     parser.add_argument('--downloads',
                         help='Directory for storing downloads')
     parser.add_argument('--incomplete',
@@ -30,6 +34,8 @@ def main():
         "-p", "12345:12345/udp",
         "-p", "9091:9091",
         "-e", "ADMIN_PASS=%s" % args.password,
+        "-v", "%s:/etc/transmission-daemon/resume" % args.resume,
+        "-v", "%s:/etc/transmission-daemon/torrents" % args.torrents,
         "-v", "%s:/var/lib/transmission-daemon/downloads" % args.downloads,
         "-v", "%s:/var/lib/transmission-daemon/incomplete" % args.incomplete,
         image
